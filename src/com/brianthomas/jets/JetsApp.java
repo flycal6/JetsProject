@@ -100,7 +100,7 @@ public class JetsApp {
 		System.out.println("\n*** Jet Successfully Added ***\n");
 	}
 
-	public void viewLongestRangeJet(Jet[] jets) {
+	public Jet viewLongestRangeJet(Jet[] jets) {
 		Jet longest = jets[0];
 		for (int i = 0; i < jets.length; i++) {
 			if (jets[i] != null) {
@@ -110,9 +110,10 @@ public class JetsApp {
 			}
 		}
 		System.out.println("\n" + longest);
+		return longest;
 	}
 
-	public void viewFastestJet(Jet[] jets) {
+	public Jet viewFastestJet(Jet[] jets) {
 		Jet fastest = jets[0];
 		for (int i = 0; i < jets.length; i++) {
 			if (jets[i] != null) {
@@ -122,6 +123,7 @@ public class JetsApp {
 			}
 		}
 		System.out.println("\n" + fastest);
+		return fastest;
 	}
 
 	public void listFleet(Jet[] jets) {
