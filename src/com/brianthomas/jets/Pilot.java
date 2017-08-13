@@ -5,6 +5,11 @@ public class Pilot {
 	private int age;
 	private int experience;
 
+	
+	public Pilot(String name) {
+		this.name = name;
+	}
+
 	public Pilot(String name, int age, int experience) {
 		this.name = name;
 		this.age = age;
@@ -38,15 +43,15 @@ public class Pilot {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Pilot: ");
+		builder.append("\nPilot: ");
 		if (name != null) {
-			builder.append("name=");
+//			builder.append("");
 			builder.append(name);
 			builder.append("\n");
 		}
 		builder.append("\tAge: ");
 		builder.append(age);
-		builder.append("\nExperience: ");
+		builder.append("\n\tExperience: ");
 		builder.append(experience);
 		builder.append("\n");
 		return builder.toString();
