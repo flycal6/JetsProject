@@ -26,7 +26,7 @@ public class JetsApp {
 		Scanner sc = new Scanner(System.in);
 		do {
 	
-			System.out.println("\n\n1Select Option: ");
+			System.out.println("\n\nSelect Option: ");
 			System.out.println("****************************");
 			System.out.println("(1) List Fleet");
 			System.out.println("(2) View Fastest Jet");
@@ -42,8 +42,10 @@ public class JetsApp {
 					listFleet(jets);
 					break;
 				case 2:
+					viewFastestJet(jets);
 					break;
 				case 3:
+					viewLongestRangeJet(jets);
 					break;
 				case 4:
 					break;
@@ -57,15 +59,34 @@ public class JetsApp {
 		} while(choice != 5);
 		sc.close();
 	}
+	
+	public void viewLongestRangeJet(Jet[] jets) {
+		Jet longest = jets[0];
+		for (int i = 0; i < jets.length; i++) {
+			if (jets[i].getRange() > longest.getRange()) {
+				longest = jets[i];
+			}
+		}
+		System.out.println("\n" + longest);
+	}
+	
+	public void viewFastestJet(Jet[] jets) {
+		Jet fastest = jets[0];
+		for (int i = 0; i < jets.length; i++) {
+			if(jets[i].getSpeed() > fastest.getSpeed()) {
+				fastest = jets[i];
+			}
+		}
+		System.out.println("\n" + fastest);
+	}
 
-	public String listFleet(Jet[] jets) {
+	public void listFleet(Jet[] jets) {
 		// List fleet prints out the model, speed, range, and price of each jet.
 		// (There must be at least 5 jets stored when the program starts).
 		System.out.println();
 		for (int i = 0; i < jets.length; i++) {
 			System.out.println(jets[i]);
 		}
-		return "";
 	}
 
 }
