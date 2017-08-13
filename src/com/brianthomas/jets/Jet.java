@@ -64,7 +64,7 @@ public class Jet {
 		builder.append(getRange());
 		builder.append(" nm\n");
 		builder.append("\tPrice: $");
-		builder.append(getPrice());
+		builder.append(String.format("%,d", getPrice()));
 		builder.append("\n");
 		return builder.toString();
 	}
