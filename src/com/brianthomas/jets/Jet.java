@@ -5,6 +5,7 @@ public class Jet {
 	private double speed;
 	private double range;
 	private int price;
+	private final static double MACH_CONV = 0.0013;
 
 	public Jet(String model, double speed, double range, int price) {
 		this.model = model;
@@ -22,11 +23,12 @@ public class Jet {
 	}
 
 	public double getSpeed() {
+		this.speed = speed * MACH_CONV;
+		this.speed = Math.round((speed * 100.0))/100.0;
 		return speed;
 	}
 
 	public void setSpeed(double speed) {
-		speed = speed * 0.00130332;
 		this.speed = speed;
 	}
 
@@ -38,7 +40,7 @@ public class Jet {
 		this.range = range;
 	}
 
-	public int getPrice() {
+	public long getPrice() {
 		return price;
 	}
 
@@ -46,4 +48,25 @@ public class Jet {
 		this.price = price;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		if (model != null) {
+			builder.append("Model: ");
+			builder.append(getModel());
+			builder.append(",\n ");
+		}
+		builder.append("\tSpeed: ");
+		builder.append(getSpeed());
+		builder.append(" mach\n");
+		builder.append("\tRange: ");
+		builder.append(getRange());
+		builder.append(" nm\n");
+		builder.append("\tPrice: $");
+		builder.append(getPrice());
+		builder.append("\n");
+		return builder.toString();
+	}
+
+	
 }
