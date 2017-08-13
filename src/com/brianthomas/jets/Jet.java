@@ -9,6 +9,7 @@ public class Jet {
 
 	public Jet(String model, double speed, double range, int price) {
 		this.model = model;
+		speed = Math.round(((speed * MACH_CONV) * 100.0))/100.0;
 		this.speed = speed;
 		this.range = range;
 		this.price = price;
@@ -23,12 +24,12 @@ public class Jet {
 	}
 
 	public double getSpeed() {
-		this.speed = speed * MACH_CONV;
-		this.speed = Math.round((speed * 100.0))/100.0;
 		return speed;
 	}
 
 	public void setSpeed(double speed) {
+		this.speed = speed * MACH_CONV;
+		this.speed = Math.round((speed * 100.0))/100.0;
 		this.speed = speed;
 	}
 
