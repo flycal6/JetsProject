@@ -67,7 +67,7 @@ public class Jet {
 		if (model != null) {
 			builder.append("Model: ");
 			builder.append(getModel());
-			builder.append(",\n ");
+			builder.append("\n");
 		}
 		builder.append("\tSpeed: ");
 		builder.append(getSpeed());
