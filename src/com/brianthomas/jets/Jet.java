@@ -6,13 +6,25 @@ public class Jet {
 	private double range;
 	private int price;
 	private final static double MACH_CONV = 0.0013;
+	private Pilot pilot;
 
-	public Jet(String model, double speed, double range, int price) {
+	
+	public Jet(String model, double speed, double range, int price, Pilot pilot) {
 		this.model = model;
 		speed = Math.round(((speed * MACH_CONV) * 100.0))/100.0;
 		this.speed = speed;
 		this.range = range;
 		this.price = price;
+		this.pilot = pilot;
+	}
+
+	public Jet(String model, double speed, double range, int price) {
+		this(model, speed, range, price, new Pilot("No Pilot Assigned"));
+//		this.model = model;
+//		speed = Math.round(((speed * MACH_CONV) * 100.0))/100.0;
+//		this.speed = speed;
+//		this.range = range;
+//		this.price = price;
 	}
 
 	public String getModel() {
@@ -65,7 +77,7 @@ public class Jet {
 		builder.append(" nm\n");
 		builder.append("\tPrice: $");
 		builder.append(String.format("%,d", getPrice()));
-		builder.append("\n");
+		builder.append(pilot);
 		return builder.toString();
 	}
 

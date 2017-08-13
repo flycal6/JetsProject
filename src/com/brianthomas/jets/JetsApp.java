@@ -12,11 +12,17 @@ public class JetsApp {
 	public static void main(String[] args) {
 		JetsApp ja = new JetsApp();
 
-		Jet cesna = new Jet("Cesna 172", 188, 736.3, 274_900);
-		Jet c5 = new Jet("C-5 Galaxy", 540, 16_320, 100_370_000);
-		Jet a380 = new Jet("Airbus A380", 683, 8000, 375_300_300);
-		Jet citX = new Jet("Cesna Citation X", 604, 3700, 23_365_000);
-		Jet cub = new Jet("Piper Cub J-3", 87, 220, 75_000);
+		Pilot jimbo = new Pilot("Jimbo", 33, 3);
+		Pilot jim	= new Pilot("Jim", 38, 20);
+		Pilot jimmy = new Pilot("Jimmy", 23, 18);
+		Pilot jimmers = new Pilot("Jimmers", 44, 33);
+		Pilot jiminy = new Pilot("Jiminy", 77, 12);
+		
+		Jet cesna = new Jet("Cesna 172", 188, 736.3, 274_900, jim);
+		Jet c5 = new Jet("C-5 Galaxy", 540, 16_320, 100_370_000, jimmy);
+		Jet a380 = new Jet("Airbus A380", 683, 8000, 375_300_300, jiminy);
+		Jet citX = new Jet("Cesna Citation X", 604, 3700, 23_365_000, jimmers);
+		Jet cub = new Jet("Piper Cub J-3", 87, 220, 75_000, jimbo);
 
 		Jet[] fleet = new Jet[10];
 		fleet[0] = cesna;
